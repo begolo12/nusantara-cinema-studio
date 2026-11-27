@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --obsidian: #0b0d12;
+  --surface: #131722;
+  --gold: #d4a359;
+  --crimson: #c8102e;
+  --cream: #f4efe6;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--cream);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-mono-tech {
+  font-family: var(--font-space-mono), monospace;
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --bg-dark: #0e1015;
+        --bg-surface: #171b24;
+        --cream: #f4efe6;
+        --gold: #d4a359;
+        --crimson: #c8102e;
+        --muted: #9aa3b2;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--bg-dark);
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="185"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Track 0: 8 Historical Scenes (9:16 Portrait, total 185s) -->
+      <div id="scene-intro" data-composition-id="scene-intro" data-composition-src="compositions/01-intro.html" data-start="0" data-duration="22" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-kerajaan" data-composition-id="scene-kerajaan" data-composition-src="compositions/02-kerajaan.html" data-start="22" data-duration="24" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-kolonial" data-composition-id="scene-kolonial" data-composition-src="compositions/03-kolonial.html" data-start="46" data-duration="23" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-kebangkitan" data-composition-id="scene-kebangkitan" data-composition-src="compositions/04-kebangkitan.html" data-start="69" data-duration="26" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-proklamasi" data-composition-id="scene-proklamasi" data-composition-src="compositions/05-proklamasi.html" data-start="95" data-duration="24" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-reformasi" data-composition-id="scene-reformasi" data-composition-src="compositions/06-reformasi.html" data-start="119" data-duration="23" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-modern" data-composition-id="scene-modern" data-composition-src="compositions/07-modern.html" data-start="142" data-duration="24" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="scene-outro" data-composition-id="scene-outro" data-composition-src="compositions/08-outro.html" data-start="166" data-duration="19" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <!-- Track 1: Indonesian Voiceover Narration -->
+      <audio id="vo-01" class="clip" data-start="0.8" data-duration="19.8" data-track-index="1" data-volume="1.0" src="assets/audio/narration-01.mp3"></audio>
+      <audio id="vo-02" class="clip" data-start="22.8" data-duration="21.22" data-track-index="1" data-volume="1.0" src="assets/audio/narration-02.mp3"></audio>
+      <audio id="vo-03" class="clip" data-start="46.8" data-duration="20.62" data-track-index="1" data-volume="1.0" src="assets/audio/narration-03.mp3"></audio>
+      <audio id="vo-04" class="clip" data-start="69.8" data-duration="23.69" data-track-index="1" data-volume="1.0" src="assets/audio/narration-04.mp3"></audio>
+      <audio id="vo-05" class="clip" data-start="95.8" data-duration="21.53" data-track-index="1" data-volume="1.0" src="assets/audio/narration-05.mp3"></audio>
+      <audio id="vo-06" class="clip" data-start="119.8" data-duration="20.93" data-track-index="1" data-volume="1.0" src="assets/audio/narration-06.mp3"></audio>
+      <audio id="vo-07" class="clip" data-start="142.8" data-duration="21.41" data-track-index="1" data-volume="1.0" src="assets/audio/narration-07.mp3"></audio>
+      <audio id="vo-08" class="clip" data-start="166.8" data-duration="16.32" data-track-index="1" data-volume="1.0" src="assets/audio/narration-08.mp3"></audio>
+
+      <!-- Track 2: Ambient Nusantara Background Music -->
+      <audio id="bgm-main" class="clip" data-start="0" data-duration="185" data-track-index="2" data-volume="0.16" data-fade-in="2.0" data-fade-out="3.0" src="assets/audio/bgm.mp3"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

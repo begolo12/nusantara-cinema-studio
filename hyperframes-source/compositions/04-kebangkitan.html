@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #000; color: #f4efe6; font-family: "Inter", sans-serif; overflow: hidden; }
+    .bg-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .cinema-vignette {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.0) 24%, rgba(0, 0, 0, 0.0) 68%, rgba(0, 0, 0, 0.88) 100%);
+    }
+    .title-card { position: absolute; left: 96px; right: 96px; top: 36%; text-align: center; }
+    .chap-num { font-family: "Space Mono", monospace; font-size: 22px; letter-spacing: 0.32em; color: #d4a359; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); }
+    .chap-title { font-family: "Playfair Display", serif; font-size: 72px; font-weight: 700; line-height: 1.1; color: #f4efe6; margin-top: 14px; text-shadow: 0 8px 36px rgba(0, 0, 0, 0.9); }
+    .chap-rule { width: 100px; height: 3px; margin: 22px auto 0; background: #c8102e; }
+    .subtitle-zone { position: absolute; left: 96px; right: 96px; bottom: 185px; text-align: center; }
+    .sub-line { position: absolute; left: 0; right: 0; bottom: 0; font-size: 34px; font-weight: 500; line-height: 1.42; color: #f4efe6; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 1); }
+    .curtain { position: absolute; inset: 0; background: #000; }
+  </style>
+
+  <div id="root" data-composition-id="scene-kebangkitan" data-width="1080" data-height="1920">
+    <video id="s04-vid" class="clip bg-video" data-start="0" data-duration="26" data-track-index="0" data-playback-rate="0.19" src="assets/blender/scene-04.mp4" muted playsinline></video>
+    <div class="cinema-vignette" data-layout-ignore></div>
+
+    <div id="s04-title-clip" class="clip title-card" data-start="0.6" data-duration="5.2" data-track-index="1">
+      <div id="s04-title-inner">
+        <div class="chap-num">BAB IV · 1908 – 1928</div>
+        <div class="chap-title">Sumpah Pemuda</div>
+        <div class="chap-rule"></div>
+      </div>
+    </div>
+
+    <div id="s04-sub1" class="clip subtitle-zone" data-start="0.8" data-duration="6.5" data-track-index="2">
+      <div id="s04-sub1-in" class="sub-line">Memasuki abad ke-20, perjuangan bersenjata<br />bertransformasi menjadi pergerakan nasional.</div>
+    </div>
+    <div id="s04-sub2" class="clip subtitle-zone" data-start="7.4" data-duration="8.2" data-track-index="2">
+      <div id="s04-sub2-in" class="sub-line">Dari Budi Utomo (1908) hingga puncak kesadaran<br />pada 28 Oktober 1928 di Kongres Pemuda II.</div>
+    </div>
+    <div id="s04-sub3" class="clip subtitle-zone" data-start="15.7" data-duration="8.5" data-track-index="2">
+      <div id="s04-sub3-in" class="sub-line">Satu Tanah Air, Satu Bangsa,<br />dan Satu Bahasa Persatuan: Indonesia.</div>
+    </div>
+
+    <div id="s04-curtain" class="clip curtain" data-start="0" data-duration="26" data-track-index="3" data-layout-ignore></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-curtain", { opacity: 1 }, { opacity: 0, duration: 0.7, ease: "power2.out" }, 0);
+    tl.fromTo("#s04-title-inner", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.7);
+    tl.fromTo("#s04-title-inner", { opacity: 1 }, { opacity: 0, duration: 0.9, ease: "power2.in" }, 4.7);
+    tl.fromTo("#s04-sub1-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.8);
+    tl.fromTo("#s04-sub1-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 7.0);
+    tl.fromTo("#s04-sub2-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 7.4);
+    tl.fromTo("#s04-sub2-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 15.3);
+    tl.fromTo("#s04-sub3-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 15.7);
+    tl.fromTo("#s04-sub3-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 23.9);
+    tl.fromTo("#s04-curtain", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.in" }, 25.2);
+    window.__timelines["scene-kebangkitan"] = tl;
+  </script>
+</template>

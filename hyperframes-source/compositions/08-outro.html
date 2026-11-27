@@ -1,0 +1,51 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #000; color: #f4efe6; font-family: "Inter", sans-serif; overflow: hidden; }
+    .bg-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .cinema-vignette {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.20) 65%, rgba(0, 0, 0, 0.90) 100%);
+    }
+    .title-card { position: absolute; left: 96px; right: 96px; top: 36%; text-align: center; }
+    .chap-num { font-family: "Space Mono", monospace; font-size: 20px; letter-spacing: 0.32em; color: #d4a359; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); }
+    .chap-title { font-family: "Playfair Display", serif; font-size: 80px; font-weight: 700; line-height: 1.08; color: #f4efe6; margin-top: 14px; text-shadow: 0 8px 36px rgba(0, 0, 0, 0.9); }
+    .chap-sub { font-family: "Playfair Display", serif; font-style: italic; font-size: 30px; color: #d4a359; margin-top: 14px; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.9); }
+    .subtitle-zone { position: absolute; left: 96px; right: 96px; bottom: 185px; text-align: center; }
+    .sub-line { position: absolute; left: 0; right: 0; bottom: 0; font-size: 34px; font-weight: 500; line-height: 1.42; color: #f4efe6; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 1); }
+    .curtain { position: absolute; inset: 0; background: #000; }
+  </style>
+
+  <div id="root" data-composition-id="scene-outro" data-width="1080" data-height="1920">
+    <video id="s08-vid" class="clip bg-video" data-start="0" data-duration="19" data-track-index="0" data-playback-rate="0.26" src="assets/blender/scene-08.mp4" muted playsinline></video>
+    <div class="cinema-vignette" data-layout-ignore></div>
+
+    <div id="s08-title-clip" class="clip title-card" data-start="1.0" data-duration="17" data-track-index="1">
+      <div id="s08-title-inner">
+        <div class="chap-num">INDONESIA EMAS 2045</div>
+        <div class="chap-title">Bhinneka Tunggal Ika</div>
+        <div class="chap-sub">“Berbeda-beda tetapi tetap satu jua.”</div>
+      </div>
+    </div>
+
+    <div id="s08-sub1" class="clip subtitle-zone" data-start="0.8" data-duration="7.5" data-track-index="2">
+      <div id="s08-sub1-in" class="sub-line">Dari kerajaan maritim kuno hingga republik modern,<br />kekuatan Indonesia selalu terletak pada persatuannya.</div>
+    </div>
+    <div id="s08-sub2" class="clip subtitle-zone" data-start="8.4" data-duration="8.6" data-track-index="2">
+      <div id="s08-sub2-in" class="sub-line">Bersama menjaga warisan sejarah,<br />menatap Indonesia Emas 2045.</div>
+    </div>
+
+    <div id="s08-curtain" class="clip curtain" data-start="0" data-duration="19" data-track-index="3" data-layout-ignore></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s08-curtain", { opacity: 1 }, { opacity: 0, duration: 0.7, ease: "power2.out" }, 0);
+    tl.fromTo("#s08-title-inner", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" }, 1.0);
+    tl.fromTo("#s08-sub1-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.8);
+    tl.fromTo("#s08-sub1-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 8.0);
+    tl.fromTo("#s08-sub2-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 8.4);
+    tl.fromTo("#s08-sub2-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 16.7);
+    tl.fromTo("#s08-curtain", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "power2.in" }, 18.0);
+    window.__timelines["scene-outro"] = tl;
+  </script>
+</template>

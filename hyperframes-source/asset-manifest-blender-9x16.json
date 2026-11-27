@@ -1,0 +1,117 @@
+{
+  "project": "sejarah-indonesia-blender-9x16",
+  "art_direction": "assets/art/art-direction-brief.md",
+  "target_resolution": "1080x1920",
+  "fps": 30,
+  "renderer": "Blender 5.3.0 (BLENDER_EEVEE)",
+  "assets": [
+    {
+      "id": "blender-scene-01",
+      "video": "assets/blender/scene-01.mp4",
+      "keyframe": "assets/blender/keyframes/scene-01.png",
+      "chapter": "01 - Nusantara",
+      "camera_move": "Sweeping aerial crane-down + slow dolly-in over 3D volcanic islands & Pinisi schooner",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": { "kind": "blender-3d-procedural", "tool": "Blender 5.3.0 EEVEE" },
+      "license": "Project-owned 3D render",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-02",
+      "video": "assets/blender/scene-02.mp4",
+      "keyframe": "assets/blender/keyframes/scene-02.png",
+      "chapter": "02 - Kerajaan Maritim (Borobudur)",
+      "camera_move": "Low-angle heroic orbit + pedestal-up revealing 3D Borobudur stupas",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": { "kind": "blender-3d-procedural", "tool": "Blender 5.3.0 EEVEE" },
+      "license": "Project-owned 3D render",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-03",
+      "video": "assets/blender/scene-03.mp4",
+      "keyframe": "assets/blender/keyframes/scene-03.png",
+      "chapter": "03 - Jalur Rempah & Kolonial",
+      "camera_move": "Ocean-level tracking dolly along 3D Maluku sailing galleons",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": { "kind": "blender-3d-procedural", "tool": "Blender 5.3.0 EEVEE" },
+      "license": "Project-owned 3D render",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-04",
+      "video": "assets/blender/scene-04.mp4",
+      "keyframe": "assets/blender/keyframes/scene-04.png",
+      "chapter": "04 - Kebangkitan Nasional & Sumpah Pemuda",
+      "camera_move": "Intimate slow 3D museum dolly push-in with parallax",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": {
+        "kind": "blender-3d-diorama",
+        "tool": "Blender 5.3.0 EEVEE",
+        "archival_plate": "https://commons.wikimedia.org/wiki/File:MuseumSumpahPemuda-21-Pemuda_Kaum_Betawi.jpg"
+      },
+      "license": "Project-owned 3D render + Public domain archival plate",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-05",
+      "video": "assets/blender/scene-05.mp4",
+      "keyframe": "assets/blender/keyframes/scene-05.png",
+      "chapter": "05 - Proklamasi 17 Agustus 1945",
+      "camera_move": "Reverent crane-up + dolly-in beside waving 3D Merah Putih flag",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": {
+        "kind": "blender-3d-diorama",
+        "tool": "Blender 5.3.0 EEVEE",
+        "archival_plate": "https://commons.wikimedia.org/wiki/File:Indonesia_declaration_of_independence_17_August_1945.jpg"
+      },
+      "license": "Project-owned 3D render + Public domain archival plate",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-06",
+      "video": "assets/blender/scene-06.mp4",
+      "keyframe": "assets/blender/keyframes/scene-06.png",
+      "chapter": "06 - Membangun Bangsa & Reformasi 1998",
+      "camera_move": "Lateral architectural tracking dolly through twilight colonnade",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": {
+        "kind": "blender-3d-diorama",
+        "tool": "Blender 5.3.0 EEVEE",
+        "archival_plate": "https://commons.wikimedia.org/wiki/File:Merdeka_Building_during_the_2015_Asian%E2%80%93African_Summit_%2801%29.jpg"
+      },
+      "license": "Project-owned 3D render + Public domain archival plate",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-07",
+      "video": "assets/blender/scene-07.mp4",
+      "keyframe": "assets/blender/keyframes/scene-07.png",
+      "chapter": "07 - Indonesia Masa Kini",
+      "camera_move": "Dynamic drone flyover + tilt-up through 3D illuminated Jakarta skyline",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": { "kind": "blender-3d-procedural", "tool": "Blender 5.3.0 EEVEE" },
+      "license": "Project-owned 3D render",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "blender-scene-08",
+      "video": "assets/blender/scene-08.mp4",
+      "keyframe": "assets/blender/keyframes/scene-08.png",
+      "chapter": "08 - Bhinneka Tunggal Ika",
+      "camera_move": "Grand ascending crane-out reveal over 3D volcanic caldera sunrise",
+      "size": "1080x1920",
+      "frames": 150,
+      "source": { "kind": "blender-3d-procedural", "tool": "Blender 5.3.0 EEVEE" },
+      "license": "Project-owned 3D render",
+      "technical_checks_passed": true
+    }
+  ]
+}

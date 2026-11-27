@@ -1,0 +1,57 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #000; color: #f4efe6; font-family: "Inter", sans-serif; overflow: hidden; }
+    .bg-video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    .cinema-vignette {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.0) 24%, rgba(0, 0, 0, 0.0) 68%, rgba(0, 0, 0, 0.88) 100%);
+    }
+    .title-card { position: absolute; left: 96px; right: 96px; top: 36%; text-align: center; }
+    .chap-num { font-family: "Space Mono", monospace; font-size: 22px; letter-spacing: 0.32em; color: #d4a359; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); }
+    .chap-title { font-family: "Playfair Display", serif; font-size: 72px; font-weight: 700; line-height: 1.1; color: #f4efe6; margin-top: 14px; text-shadow: 0 8px 36px rgba(0, 0, 0, 0.9); }
+    .chap-rule { width: 100px; height: 3px; margin: 22px auto 0; background: #c8102e; }
+    .subtitle-zone { position: absolute; left: 96px; right: 96px; bottom: 185px; text-align: center; }
+    .sub-line { position: absolute; left: 0; right: 0; bottom: 0; font-size: 34px; font-weight: 500; line-height: 1.42; color: #f4efe6; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 1); }
+    .curtain { position: absolute; inset: 0; background: #000; }
+  </style>
+
+  <div id="root" data-composition-id="scene-modern" data-width="1080" data-height="1920">
+    <video id="s07-vid" class="clip bg-video" data-start="0" data-duration="24" data-track-index="0" data-playback-rate="0.21" src="assets/blender/scene-07.mp4" muted playsinline></video>
+    <div class="cinema-vignette" data-layout-ignore></div>
+
+    <div id="s07-title-clip" class="clip title-card" data-start="0.6" data-duration="5.2" data-track-index="1">
+      <div id="s07-title-inner">
+        <div class="chap-num">BAB VII · ABAD XXI</div>
+        <div class="chap-title">Indonesia Masa Kini</div>
+        <div class="chap-rule"></div>
+      </div>
+    </div>
+
+    <div id="s07-sub1" class="clip subtitle-zone" data-start="0.8" data-duration="7.0" data-track-index="2">
+      <div id="s07-sub1-in" class="sub-line">Demokrasi terbesar ketiga di dunia sekaligus<br />ekonomi terbesar ASEAN dan anggota G20.</div>
+    </div>
+    <div id="s07-sub2" class="clip subtitle-zone" data-start="7.9" data-duration="7.0" data-track-index="2">
+      <div id="s07-sub2-in" class="sub-line">Batik, Wayang, Angklung, dan Gamelan<br />diakui sebagai warisan budaya dunia UNESCO.</div>
+    </div>
+    <div id="s07-sub3" class="clip subtitle-zone" data-start="15.0" data-duration="7.0" data-track-index="2">
+      <div id="s07-sub3-in" class="sub-line">Generasi muda mendorong transformasi digital,<br />ekonomi kreatif, dan pembangunan berkelanjutan.</div>
+    </div>
+
+    <div id="s07-curtain" class="clip curtain" data-start="0" data-duration="24" data-track-index="3" data-layout-ignore></div>
+  </div>
+
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s07-curtain", { opacity: 1 }, { opacity: 0, duration: 0.7, ease: "power2.out" }, 0);
+    tl.fromTo("#s07-title-inner", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.7);
+    tl.fromTo("#s07-title-inner", { opacity: 1 }, { opacity: 0, duration: 0.9, ease: "power2.in" }, 4.7);
+    tl.fromTo("#s07-sub1-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.8);
+    tl.fromTo("#s07-sub1-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 7.5);
+    tl.fromTo("#s07-sub2-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 7.9);
+    tl.fromTo("#s07-sub2-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 14.6);
+    tl.fromTo("#s07-sub3-in", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 15.0);
+    tl.fromTo("#s07-sub3-in", { opacity: 1 }, { opacity: 0, duration: 0.3 }, 21.7);
+    tl.fromTo("#s07-curtain", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.in" }, 23.2);
+    window.__timelines["scene-modern"] = tl;
+  </script>
+</template>
